@@ -27,6 +27,15 @@ static unsigned long myunsignedLong = 3.141592;
 void setup() {
   Serial.begin(9600);
   Serial.println(myString + ":" + myIntValue);
+  static unsigned int ledPin = 6;
+   static unsigned int buttonPin = 5;
+   bool readpin;
+   bool writeValue;
+
+   void setup() {
+    pinMode(ledPin OUTPUT)
+    pinMode(buttonPin INPUT;)
+   }
 
 
   
