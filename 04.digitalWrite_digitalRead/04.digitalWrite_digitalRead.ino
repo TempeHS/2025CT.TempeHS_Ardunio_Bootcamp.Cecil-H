@@ -33,7 +33,6 @@
 static unsigned int ledPin = 6;
 static unsigned int buttonPin = 5;
 bool readPin;
-bool writeValue;
 
 void setup() {
  pinMode(ledPin, OUTPUT);
@@ -44,9 +43,15 @@ void setup() {
 
 void loop() { 
  readPin = digitalRead(buttonPin);
- writeValue = readPin;
- digitalWrite(ledPin, !writeValue);
- Serial.print(digitalRead(6));
- Serial.println(digitalRead(5));
+ digitalWrite(ledPin, !readPin);
  
-} 
+ Serial.print("Pin-6:");
+ Serial.print(readPin);
+ Serial.print(",");
+ Serial.print("Pin-5:");
+ Serial.print(!readPin);
+ Serial.println(",");
+}
+
+
+ 
