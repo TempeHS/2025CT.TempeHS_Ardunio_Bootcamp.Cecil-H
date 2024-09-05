@@ -35,11 +35,46 @@
     
 */
 
-void setup() {
-  
-}
+#define LEDpin 3
+#define BTNpin 4
 
-void loop() {
-      
-}
+void setup() 
+  {
+    pinMode(BTNpin, INPUT);
+    pinMode(LEDpin, OUTPUT);
+    Serial.begin(9600);
+  }
+
+void loop()
+  {
+   do {
+      digitalWrite(LEDpin, HIGH);
+      Serial.println("Looping");
+    
+    }
+    while (digitalRead(BTNpin) > 1);
+
+    digitalWrite(LEDpin, LOW);
+    Serial.println("loop is skipped");
+  }
+  
+  
+    
+     
+/* 
+     while (digitalRead(BTNpin) > 0) {
+      digitalWrite(LEDpin, HIGH);
+      Serial.println("Looping");
+    }
+    digitalWrite(LEDpin, LOW);
+    Serial.println("loop is skipped");
+*/
+
+    
+  
+
+ 
+
+  
+
 
